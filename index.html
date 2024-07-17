@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+  <title>My Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="logo.ico">
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+  <script src="model-output.js"></script>
+</head>
+
+<body>
+  <div class="topbar">
+    <text class="myname">ButterBukketHoney.</text>
+    <ul class="menu">
+      <li><a href="#" id="projectsButton"><text class="bold">Projects</text></a></li>
+    </ul>
+  </div>
+
+  <canvas id="renderCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById("renderCanvas");
+    const engine = new BABYLON.Engine(canvas, true);
+    const scene = createScene();
+    engine.runRenderLoop(function () {
+      scene.render();
+    });
+
+    window.addEventListener("resize", function () {
+      engine.resize();
+    }); 
+  </script>
+
+<div class="bigbar">
+  <div class="container">
+    <div class="blog-box">
+     <text id="description" class="blogtext"></text>
+    </div>
+  </div>
+</div>
+
+<!-- Popup element -->
+<div class="popup" id="popup">
+  <p class="popuptext">Quietly crafting projects to restore awe and wonder. Stay tuned and come back later.</p>
+</div>
+
+<script>
+  const description = "Greetings, fellow digital adventurers! I am a passionate gamer, code enthusiast, web developer, game designer, and 3D modeler. Gaming is my heartbeat, from classic arcade wonders to modern immersive experiences. But I don't just play – I craft. With lines of code, I sculpt intricate gameplay mechanics and immersive worlds, blending form and function seamlessly. As a web developer, I sculpt digital experiences that transcend screens, while my 3D modeling endeavors breathe life into virtual sculptures. Join me on this journey through the boundless universe of technology and creativity, where every line of code is a brushstroke in the masterpiece of my imagination.";
+  const descriptionElement = document.getElementById('description');
+  const projectsButton = document.getElementById('projectsButton');
+  const popup = document.getElementById('popup');
+  const typingSpeed = 14;
+
+  function typeWriter(text, index) {
+    if (index < text.length) {
+      descriptionElement.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(() => {
+        if (descriptionElement.scrollHeight > descriptionElement.clientHeight) {
+          descriptionElement.innerHTML += '\n';
+        }
+        typeWriter(text, index);
+      }, typingSpeed);
+    }
+  }
+
+  window.onload = () => {
+    typeWriter(description, 0);
+  };
+
+  projectsButton.addEventListener('click', () => {
+    if (!popup.classList.contains('active')) {
+      popup.classList.add('active');
+      setTimeout(() => {
+        popup.classList.remove('active');
+      }, 5000);
+    }
+  });
+</script>
+
+  <div>
+    <text class="copyright">©ButterBukketHoney. All rights reserved.</text>
+  </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* styles.css */
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.text{
+  color: #ffffff;
+  font-size: 2vw;
+  font-weight:lighter;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 20%;
+  position: absolute;
+  top: 47%; 
+  font-family: 'Lobster',sans-serif;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 1;
+}
+
+.bigbar {
+  background-color: #000000;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+  width: 100%;
+  height: 45vh;
+}
+
+@media only screen and (max-width: 1000px) {
+  .bigbar {
+    background-color: #000000;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    width: 100%;
+    height: 75vh;
+  }
+}
+
+.container {
+  width: 80%;
+  max-width: 800px; 
+  background-color: #000000; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-box {
+  font-size: 16px;
+  color: #fff; 
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.blogtext{
+  font-family:  "Source Code Pro";
+}
+
+@media only screen and (max-width: 1000px) {
+  .blogtext{
+    font-family:  "Source Code Pro";
+    font-size: 10pt;
+  }
+}
+
+.myname{
+  color: #ffffff;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: 'Lobster',sans-serif;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1000px) {
+  .myname{
+    color: #ffffff;
+    font-size: 4vw;
+    font-weight: bold;
+    font-family: 'Lobster',sans-serif;
+    text-align: left; 
+  }
+}
+
+
+html {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+#renderCanvas {
+  width: 100%;
+  height: 50%;
+  touch-action: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  #renderCanvas {
+    width: 100%;
+    height: 60%;
+    pointer-events: none;
+  }
+}
+
+
+canvas {
+  outline: none;
+}
+
+.topbar {
+  background-color: #000000;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.copyright{
+  color: #333333;
+  display: block;
+  font-size: 10pt;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto; 
+}
+
+@media only screen and (max-width: 1000px) {
+  .copyright{
+    color: #333333;
+    display: block;
+    font-size: 5pt;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto; 
+  }
+}
+
+.topbar .myname {
+  align-items: center;
+  text-align: left;
+}
+
+.topbar .menu {
+  align-items: center;
+  text-align: right;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Bcolor{
+  color: #3b44be;
+}
+
+.bold{
+  font-family: Plus Jakarta Sans Variable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+@media only screen and (max-width: 1000px) {
+  .bold{
+    font-family: Plus Jakarta Sans Variable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-size: 3.5vw;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: -100px; /* Start position above the screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  transition: top 0.5s ease;
+  z-index: 2; 
+}
+
+.popup.active {
+  top: 50px; 
+}
+
+.popuptext{
+  font-family: "Source Code Pro";
+}
+
+@media only screen and (max-width: 1000px){
+  .popup {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: top 0.5s ease;
+    z-index: 2; 
+  }
+
+  .popuptext{
+    font-family: "Source Code Pro";
+    font-size: 10px;
+  }
+}
