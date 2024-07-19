@@ -18,15 +18,14 @@ var createScene = function () {
         return new BABYLON.Texture(url, scene);
     });
 
-    
+    // main Cube
     var cube = BABYLON.MeshBuilder.CreateBox("cube", { size: 4 }, scene);
     cube.position = new BABYLON.Vector3(0, 1, 0); 
 
+    //second Cube
     var cube2 = BABYLON.MeshBuilder.CreateBox("cube", { size: 4 }, scene);
     cube2.position = new BABYLON.Vector3(0, 1, -20);
-
     var texture2 = new BABYLON.Texture("https://i1.sndcdn.com/artworks-z1uZrU59JAqSMbRY-2MOcwQ-t1080x1080.jpg", scene);
-
     var material2 = new BABYLON.StandardMaterial("material2", scene);
     material2.diffuseTexture = texture2;
     cube2.material = material2;
